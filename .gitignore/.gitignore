@@ -1,0 +1,209 @@
+MAIN
+var expresion = '' ;
+  $ (document).ready (function () { 
+  $ ('buton').click ( function () {
+  var caracter = $ (this).text () ;
+     if caracter == '=') {
+      expresion = eval ( expresion) ;
+      $ ('#pantalla') txt (expresion)
+
+
+   } 
+ else if (caracter == 'c ) {
+          expresion = ""
+ $ ('#pantalla'.txt(expresion) 
+             }
+  else {
+   expresion + = caracter ; {
+   $ ('#pantalla') text(expresion)
+          }
+           
+          } ) ;
+     
+          } ) ;
+
+$ (document). keypress (function (e)  {
+  var codigo = e.char code ;
+  var caracter = string.fromcharcode ( codigo)  ;
+  var posible_caracteres = [ '1','2','3','4','5','6','7','8','9','0','+'.'-','*','/','=']
+
+if ( posibles_caracteres.includes(caracter) ) {
+       if(caracter = = 'c') {
+          expresion = ''{
+          expresion '' ;
+     }
+        else {
+          expresion + = caracter ;
+
+if (codigo == 13 ) {
+   expresion = eval ( expresion) ;
+    }
+    }
+ $ ('#pantalla').text (expresion) ;
+
+  } ) ;
+  
+  HTML
+<!DOCTYPE html>   <! –– documento html -->
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora en java</title>    <! –– titulo,calculadora en java  -->
+    <link rel="stylesheet" href="style.css"> <! –– documento de estilos , styles.css  -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>   <! –– cabeza  -->
+<body>    <! –– cuerpo  -->
+    
+    <div class="content-body">
+        <div class="content-calculator"> <! –– calculadora en contenedor  -->
+
+            <div class="screen">
+                <input type="text" placeholder="0" disabled id="screen-result">  <! –– entrada tipo texto  -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="7" onclick="getData(this)">  <! –– entrada tipo boton numero 7 , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="8" onclick="getData(this)">  <! –– entrada tipo boton numero 8 , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="9" onclick="getData(this)">  <! –– entrada tipo boton numero 9 , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="+" onclick="getData(this)">  <! –– entrada tipo boton , caracter + , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="4" onclick="getData(this)">   <! –– entrada tipo boton numero 4, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="5" onclick="getData(this)">   <! –– entrada tipo boton numero 5 , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="6" onclick="getData(this)">   <! –– entrada tipo boton numero 6, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="-" onclick="getData(this)">  <! –– entrada tipo boton , caracter -, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="1" onclick="getData(this)">   <! –– entrada tipo boton numero 1, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="2" onclick="getData(this)">   <! –– entrada tipo boton numero 2, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="3" onclick="getData(this)">   <! –– entrada tipo boton numero 3, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="*" onclick="getData(this)">   <! –– entrada tipo boton , caracter * , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="0" onclick="getData(this)">   <! –– entrada tipo boton numero 0, hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius">
+                <input type="button" value="/" onclick="getData(this)">   <! –– entrada tipo boton , caracter / , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius btn-clean">
+                <input type="button" value="C" class="clean" onclick="clean()">  <! –– entrada tipo boton , caracter c , hacer click -->
+            </div>
+            <div class="btn-cal btn-cal-radius btn-equal">
+                <input type="button" value="=" class="equal" onclick="calculate()"> <! –– entrada tipo boton , evaluacion equal, hacer click en calculadora -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>   <! –– menu js  -->
+</body> <! –– cuerpo-->
+</html><! html -->
+
+STYLES 
+body{            
+    margin: 0; 
+    padding: 0;  
+}
+
+.content-body{
+    background-color: #6dc9ff;
+    width: 100%;               
+    height: 100vh;            
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+}
+
+.content-calculator {           
+    width: 400px;             
+    height: 450px;           
+    background-color: #aaaaaa; 
+    border-radius: 10px;        
+    box-shadow: 2px 1px 29px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px 15px;       
+    display: grid;             
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: 85px;
+    grid-gap: 20px;
+}
+
+.screen{
+    background-color: #414141;  
+    border-radius: 10px;       
+    color: #57e8ff;            
+    padding: 15px;             
+    grid-column: 1 / 5;        
+}
+
+.screen > input{
+    background: none;      
+    color: inherit;        
+    border: none;          
+    padding: 0;           
+    outline: inherit;     
+    font-size: 50px;       
+    width: 100%;           
+}
+
+.btn-cal{
+    background-color: white;  
+}
+
+.btn-cal-radius{
+    border-radius: 10px;   
+}
+
+.btn-cal > input{          
+    border: 0;          
+    height: 100%;          
+    width: 100%;          
+    border-radius: 10px;  
+    outline: none;        
+    color: #7e7e7e;       
+    font-size: 35px;      
+}
+
+.btn-cal > .equal{
+    background-color: #fffb88;  
+}
+
+.btn-cal > .clean{
+    background-color: #98f8ab; 
+}
+
+.btn-cal :hover{
+    transition-duration: 0.4s;   
+    background-color: #ffb497;
+    color: white;              
+}
+
+.btn-clean :hover{
+    transition-duration: 0.4s;  
+    background-color: #66f789; 
+    color: white;
+}
+
+.btn-equal :hover{              
+    transition-duration: 0.4s; 
+    background-color: #fffb59;  
+    color: black;               
+}
+
